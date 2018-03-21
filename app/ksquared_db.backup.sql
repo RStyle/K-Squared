@@ -57,8 +57,6 @@ CREATE TABLE `CARDS` (
 --
 
 INSERT INTO `CARDS` (`user`, `setname`, `chapter`, `fronttext`, `backtext`, `frontimageurl`, `backimageurl`, `timetolearn`) VALUES
-('Cias05', 'test2', 1, 'moon mit spaß', 'mond', '', '', '2018-02-28 15:26:16'),
-('Cias05', 'Yannick ist toll', 1, 'Yannick', 'ist toll', '', '', '2018-02-28 15:42:08'),
 ('RStyle', 'words to use instead of very', 1, 'very accurate', 'exact', '', '', '2018-03-20 20:20:04'),
 ('RStyle', 'words to use instead of very', 1, 'very afraid', 'fearful', '', '', '2018-03-20 20:00:26'),
 ('RStyle', 'words to use instead of very', 1, 'very angry', 'furious', '', '', '2018-03-20 20:00:36'),
@@ -204,23 +202,6 @@ CREATE TABLE `LOGIN_TOKENS` (
 -- Dumping data for table `LOGIN_TOKENS`
 --
 
-INSERT INTO `LOGIN_TOKENS` (`user`, `token`, `date`) VALUES
-('Cias05', '8JQDHvWMyFQaDVehRpeShsFgTjDqMkUtUKXCeUx49m5mgAuYPzQXH6dAGGQ3SKMM4Jx8CLbkX7xefHcVgTSPxWyeDn75Ytr2bEZE', '2018-03-20 02:24:03'),
-('RStyle', 'b4wV4X6TmZSt7C6j24nQPTzfzf4a5nF6HbzjZWdkWW638aDY5SPsKnyitTjPgQtPSKYSGcdCY9e6AH5d9sws7L3QDCEL2X9tH8kx', '2018-03-20 19:36:08'),
-('Cias05', 'CCAshigVSphsS7Sfhb7ctQN9yqRkV348dcQmmXgemqweMpkVqHYA7MhWbZhX2B56DuHRsQV6esAS7LNN4Lwa86W95d7WEb2svhiE', '2018-03-20 19:40:53'),
-('Cias05', 'H8Zn6SPd6GTdTeMBiC3GQULU3kepqSDXyCjU4ZYZFRd8WQie3BLr66jXHqmXgQV73e2WdzWKqZskQ2qrcb898J7qYJnf9hCamcXr', '2018-03-20 14:03:16'),
-('Cias05', 'hHydqKw5ZgNdPKdAQhGELiFw3dcf5U2CBRGSAcvAjhEYSH8HRpwBxbYRfaWBVxm6nUxPXJxgRbeJKD2ASNkpQjeVkb6fyJCDCZ29', '2018-03-20 22:07:00'),
-('Cias05', 'iq5SMmPpcExWrzgKkjnkjpbuFu5BiCCtTfjEsZUvDrsUHyDTASdLffeLzAwAkYTeedJxdCJGUaBByp4Zf8KmDQYdyuEBs7FwByLF', '2018-03-20 19:33:41'),
-('RStyle', 'JQFASLsByKkq7x6v9BrKCMRa54Dg3eGkUwLLgdw6N8MtWrF5SWp4He5m8guamakfwXS5anaPMNgHdNmWJ2z26UEdbYenZquvnmRn', '2018-03-20 22:03:26'),
-('RStyle', 'Jur7Bkvrz8ZP2yKTij9nK3fdz9dAG8NyTeV5rrLHPK6qhqis2H6jiCnAksiSRXrJcmmt5XatG79QMJgnzDxApCizUssKpA4sNFBr', '2018-03-20 20:52:37'),
-('Cias05', 'PpvtuRJS9ireRPX5uFPwEyQBXFaDb6BQLXheNSWvam2RbxuvciJH88t6mthpQKdAGmE5dBRdPrUQFpkJxUzW3K2Fd9UTtX4ajg5n', '2018-03-20 19:20:15'),
-('RStyle', 'qtRbVV96Xyy76fXypyditUEqMe2yVjBj43kyxLVuitRFzNdEkhP6b4LP8mn4wPERqRqDBjYK4PzUC58PCwtEQe4wrGRE656MuLzV', '2018-03-20 21:57:23'),
-('RStyle', 'StpibQyqibJZXhHaSgffzBqr8GP5JA2AUFKV5hkEiVDgcugV3maSPrivXXRF7rq2XZv3g7fr3Kx6e6z7Hzy7G8SE6JucZA4X9QyG', '2018-03-20 14:00:58'),
-('Cias05', 'UbJTtVJLkZNm8wLqTapBnuivWj9ZgQ3bRkVjgDVsDJ6ker3XrG95aJRXTyXapybeBWqHAjamU7xYNQWe7697nz4gP2gdQii2fyiF', '2018-03-20 14:15:06'),
-('RStyle', 'WxFzmetP9RDknXQccsztYqY4L4qfpFajcGApMUdvLG7YDvaFE2ZCGYf33v8Hb9Sdp3tbvwwgdUeGqfwU7w6nvCFNYm5ZMwcbQvck', '2018-03-20 21:59:45'),
-('Cias05', 'xsNA9GkJSSiNznp7bKirg2pkdWWrvMVKdJtCy6vrw6dNJtuLc4bjUrvYnsqAdjthUDKshfA6BEttXDdagfkax7ZBPpjSz5atgLCq', '2018-03-20 14:03:09'),
-('Cias05', 'YeicwJVU5HGX4cXa8UAbYfYDgzV48eg6ir96a4y5ke3EgzFFtpHsvFV4eQWDVdidvJAvmYRxdtbkJHRcW8usnpLteHWZLfdgPD3a', '2018-03-20 19:50:38');
-
 -- --------------------------------------------------------
 
 --
@@ -243,9 +224,7 @@ CREATE TABLE `SETS` (
 --
 
 INSERT INTO `SETS` (`id`, `name`, `chapter`, `user`, `descreption`, `is_public`, `created_on`, `downloads`) VALUES
-('dXyenPNm', 'test2', 1, 'Cias05', NULL, 0, '2018-02-27 02:14:32', 0),
-('CtyFDzRv', 'words to use instead of very', 1, 'RStyle', NULL, 0, '2018-03-20 19:59:55', 0),
-('X5BwSqCb', 'Yannick ist toll', 1, 'Cias05', NULL, 0, '2018-02-28 15:42:08', 0);
+('CtyFDzRv', 'words to use instead of very', 1, 'RStyle', NULL, 0, '2018-03-20 19:59:55', 0);
 
 -- --------------------------------------------------------
 
@@ -278,9 +257,7 @@ CREATE TABLE `USERS` (
 --
 
 INSERT INTO `USERS` (`user`, `password`, `email`, `status`) VALUES
-('Cias05', '$2y$10$OXJTP.SYyIDXIYJdRVdeHO5L0vBpdyu/rnY40Pbj0Vaumz4vq6UoG', 'OEowWmRKQ3N3b2wrL291T1l3UC9YQnQ1S09EOERWMzhPR3pHRTBFbENoWT06Op06Il8av9yP/BhNTlj+954=', 'ok'),
-('RStyle', '$2y$10$mslBewZEAuShbMMCatFmOOYgjhvtAAHkaHOP3jNbkpCckkvSC1lRC', 'UU10MWZTQmJDQ2ZnQ3cwZjBhYkZ1dz09OjqT4CDuLg967KjEYkhvqCoL', 'ok'),
-('RStyle2', '$2y$10$L.0cc6N9U6dM9D0uInAc3e.r74wKx1vryDaGTpUJtcFCOuDqT8/Y2', '', 'ok');
+('RStyle', '$2y$10$mslBewZEAuShbMMCatFmOOYgjhvtAAHkaHOP3jNbkpCckkvSC1lRC', '', 'ok');
 
 --
 -- Indexes for dumped tables
