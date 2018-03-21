@@ -1,0 +1,168 @@
+<div class="container white-area my-background height-auto text-dark mt-5">
+    <br>
+    <div class="container">
+        <br>
+        <legend>PROFILE</legend>
+        <br>
+        {% if _get['change_email_success'] == success %}
+        <div class="alert alert-success alert-dismissible fade show no-corners" role="alert">
+            Email was successfully changed.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+        
+                      
+        <div class="container">
+        	
+            <div class="card">
+            	<div class="modal-header info-color white-text" style="z-index:5;">
+	                <h4 class="title"><i class="fa fa-edit"></i> Change email</h4>
+	            </div>
+                <div class="card-body">
+                    <form class="form-inline needs-validation" action="{{ root }}?page=profile&amp;subpage=change_email" method="post" novalidate>
+                        <!--<div class="input-group">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group row" style="width:100%">
+                            <div class="col-md-9 mb-3">
+                                <div class="input-group">
+                                    <input id="email" type="email" name="email" class="form-control"  value="{{ user.getEmail() }}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                    <button type="submit" class="btn btn-primary btn-block">Change Email</button>
+                            </div>
+                        </div>-->
+                        
+                        <div class="input-group">
+                            <label for="pw2">Email</label>
+                        </div>
+                        <div class="form-group row" style="width:100%">
+                            <div class="col-md-9 mb-3">
+                                <div class="input-group">
+                                    <input id="email" type="email" name="email" class="form-control" value="{{ user.getEmail() }}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="input-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Change Email</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            {% if _get['change_password_success'] == success %}
+	        <div class="alert alert-success alert-dismissible fade show no-corners" role="alert">
+	            Password was successfully changed.
+	            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	            </button>
+	        </div>
+	        {% elseif _get['change_password_success'] == failure %}
+	        <div class="alert alert-danger alert-dismissible fade show no-corners" role="alert">
+	            Error. Either your new passwords did'nt match or your old password was wrong.
+	            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	            </button>
+	        </div>
+	        {% endif %}
+            <div class="card">
+            	<div class="modal-header info-color white-text" style="z-index:5;">
+	                <h4 class="title"><i class="fa fa-edit"></i> Change password</h4>
+	            </div>
+                <div class="card-body">
+                    <form class="form-inline needs-validation" action="{{ root }}?page=profile&amp;subpage=change_password" method="post" novalidate>
+                        <div class="input-group">
+                            <label for="pw1">New Password</label>
+                        </div>
+                        <div class="form-group row" style="width:100%">
+                            <!--<div class="col-md-1 mb-3">
+                            </div>
+                            <div class="col-md-1 mb-3">
+                            </div>-->
+                            <div class="col-md-9 mb-3">
+                                <div class="input-group">
+                                    <input id="pw1" type="password" name="password1" class="form-control" placeholder="Password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="pw2">Repeat Password</label>
+                        </div>
+                        <div class="form-group row" style="width:100%">
+                            <div class="col-md-9 mb-3">
+                                <div class="input-group">
+                                    <input id="pw2" type="password" name="password2" class="form-control" placeholder="Password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="pw2">Old Password</label>
+                        </div>
+                        <div class="form-group row" style="width:100%">
+                            <div class="col-md-9 mb-3">
+                                <div class="input-group">
+                                    <input id="pw2" type="password" name="password_old" class="form-control" placeholder="Old Password" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="input-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Change Password</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- style="display:none;" -->
+        
+        <!--
+		<br><br>
+        <legend>STATS</legend>
+		<div style="width:100%;">
+            <canvas id="canvas1"></canvas>
+            <br>
+            <canvas id="canvas2" ></canvas>
+            <br>
+            <canvas id="canvas3"></canvas>
+            <br>
+        </div>
+        <br>-->
+        
+        <!--
+        <div class="btn-group btn-group-toggle d-flex justify-content-center" data-toggle="buttons">
+            <label class="btn btn-secondary active" id="canvas1button">
+                <input type="radio" name="options" autocomplete="off" checked> Last 7 Days
+            </label>
+            <label class="btn btn-secondary" id="canvas2button">
+                <input type="radio" name="options" autocomplete="off"> Last 30 Days
+            </label>
+            <label class="btn btn-secondary" id="canvas3button">
+                <input type="radio" name="options" autocomplete="off"> Last 12 Months
+            </label>
+        </div>
+        -->
+
+    </div>
+	<br>
+	<br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

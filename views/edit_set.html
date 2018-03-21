@@ -1,0 +1,310 @@
+<div class="container white-area my-background height-auto text-dark mt-5 pb-4">
+    <div class="container pt-0" style="width:80%">
+
+        {% set this_set = sets.getSetFromId( _get['id'] ) %}
+        {% set qr_url = 'k-squared://savrasov.de/k-squared/?id=' ~ this_set.id %}
+        {% set qr_url = root ~ '?page=my_sets&subpage=share&id=' ~ this_set.id %}
+
+        <div class="d-md-flex flex-md-equal w-100 pt-0">
+            <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden border-light border-0">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">{{ this_set.name }} #{{ this_set.chapter }}</h2>
+                    <p class="lead">Cards: {{ this_set.cards }} {{ this_set.description == '' ? '' : '
+                        <br>' ~ this_set.description }}</p>
+                </div>
+                <div class="bg-light box-shadow mx-auto my-flexbox" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;">
+                    <a href="{{ root }}?page=learn_set&amp;id={{ this_set.id }}">
+                        <button type="button" class="btn btn-outline-primary">Start Learning</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <legend>SHARE SET</legend>
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <div class="input-group">
+                    <input id="share-value" type="url" class="form-control" placeholder="Share Url" value="{{ root }}?page=my_sets&amp;subpage=share&amp;id={{ _get['id'] }}">
+                    <div class="input-group-append">
+                        <button id="show-qr" type="button" class="btn btn-secondary rounded-0">Show QR-Code</button>
+                    </div>
+                    <div class="input-group-append">
+                        <button id="copy-share" type="button" class="btn btn-primary rounded-0">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="qr" class="text-center">
+            <img src="https://chart.googleapis.com/chart?chs=250x250&amp;cht=qr&amp;chl={{ qr_url|escape('url') }}" alt="qr-code">
+            <br>
+            <br>
+        </div>
+
+        {% if _get['delete_success'] == success %}
+        <div class="alert alert-success alert-dismissible fade show no-corners" role="alert">
+            Card was successfully deleted.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% elseif _get['delete_success'] == failure %}
+        <div class="alert alert-danger alert-dismissible fade show no-corners" role="alert">
+            Error. Card was already deleted.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% elseif _get['add_success'] == success %}
+        <div class="alert alert-success alert-dismissible fade show no-corners" role="alert">
+            Card was successfully added.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% elseif _get['add_success'] == failure %}
+        <div class="alert alert-danger alert-dismissible fade show no-corners" role="alert">
+            Error. Please provide either a text or an image url for both sides of the card.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% elseif _get['edit_success'] == success %}
+        <div class="alert alert-success alert-dismissible fade show no-corners" role="alert">
+            Card was successfully edited.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% elseif _get['edit_success'] == failure %}
+        <div class="alert alert-danger alert-dismissible fade show no-corners" role="alert">
+            Error. Please provide either a text or an image url for both sides of the card.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %} {% if _get['subpage'] == 'edit' %}
+
+        <legend>EDIT CARD</legend>
+
+        <form action="{{ root }}?page=edit_set&amp;subpage=edit&amp;id={{ _get['id'] }}&amp;fronttext={{ _get['fronttext'] }}&amp;frontimageurl={{ _get['frontimageurl'] }}&amp;backtext={{ _get['backtext'] }}&amp;backimageurl={{ _get['backimageurl'] }}" method="post">
+            <div class="card-group">
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <h5 class="card-title">front</h5>
+                        <!--<div class="form-group">
+                            <input id="newfronttext" name="newfronttext" type="text" class="form-control" placeholder="text" value="{{ _get['fronttext'] }}">
+                        </div>
+                        <div class="form-group">
+                            <input type="url" name="newfrontimageurl" class="form-control" placeholder="image url" value="{{ _get['frontimageurl'] }}">
+                        </div>-->
+                        <div class="form-label-group">
+                        	<input name="newfronttext" type="text" id="editCard1_1" class="form-control" value="{{ _get['fronttext'] }}" placeholder="text" autofocus>
+                            <label for="editCard1_1">text</label>
+                        </div>
+                        <div class="form-label-group">
+                        	<input type="url" name="newfrontimageurl" id="editCard1_2" class="form-control" value="{{ _get['frontimageurl'] }}" placeholder="image url" autofocus>
+                            <label for="editCard1_2">image url</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <h5 class="card-title">back</h5>
+                        <!--<div class="form-group">
+                            <input id="backtext" name="newbacktext" type="text" class="form-control" placeholder="text" value="{{ _get['backtext'] }}">
+                        </div>
+                        <div class="form-group">
+                            <input type="url" name="newbackimageurl" class="form-control" placeholder="image url" value="{{ _get['backimageurl'] }}">
+                        </div>-->
+                        <div class="form-label-group">
+                        	<input name="newbacktext" type="text" id="editCard2_1" class="form-control" value="{{ _get['backtext'] }}" placeholder="text" autofocus>
+                            <label for="editCard2_1">text</label>
+                        </div>
+                        <div class="form-label-group">
+                        	<input type="url" name="newbackimageurl" id="editCard2_2" class="form-control" value="{{ _get['backimageurl'] }}" placeholder="image url" autofocus>
+                            <label for="editCard2_2">image url</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="">
+                    <button type="submit" class="btn btn-primary rounded-0" style="width:calc(100% - 12px);">Edit Card</button>
+                </div>
+            </div>
+
+        </form>
+
+        {% endif %}
+
+        <legend>ADD CARD</legend>
+
+        <form action="{{ root }}?page=edit_set&amp;subpage=add&amp;id={{ _get['id'] }}" method="post">
+
+            <!--<div class="form-group row">
+			  	<label for="fronttext" class="col-sm-1 col-form-label">front</label>
+			    <div class="col">
+			      <input id="fronttext" name="fronttext" type="text" class="form-control" value="{{ _post['fronttext'] }}" placeholder="text">
+			    </div>
+			    <div class="col">
+			      <input type="url" name="frontimageurl" class="form-control" value="{{ _post['frontimageurl'] }}" placeholder="image url">
+			    </div>
+			  </div>
+			  <hr>
+			  <div class="form-group row">
+				<label for="backtext" class="col-sm-1 col-form-label">back</label>
+			    <div class="col">
+			      <input id="backtext" name="backtext" type="text" class="form-control" value="{{ _post['backtext'] }}" placeholder="text">
+			    </div>
+			    <div class="col">
+			      <input type="url" name="backimageurl" class="form-control" value="{{ _post['backimageurl'] }}" placeholder="image url">
+			    </div>
+			  </div>-->
+
+            <div class="card-group">
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <h5 class="card-title">front</h5>
+                        <!--<div class="form-group">
+                            <input name="fronttext" type="text" class="form-control" value="{{ _post['fronttext'] }}" placeholder="text">
+                        </div>
+                        <div class="form-group">
+                            <input type="url" name="frontimageurl" class="form-control" value="{{ _post['frontimageurl'] }}" placeholder="image url">
+                        </div>-->
+                        <div class="form-label-group">
+                        	<input name="fronttext" type="text" id="addCard1_1" class="form-control" value="{{ _post['fronttext'] }}" placeholder="text" autofocus>
+                            <label for="addCard1_1">text</label>
+                        </div>
+                        <div class="form-label-group">
+                        	<input type="url" name="frontimageurl" id="addCard1_2" class="form-control" value="{{ _post['frontimageurl'] }}" placeholder="image url" autofocus>
+                            <label for="addCard1_2">image url</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <h5 class="card-title">back</h5>
+                        <!--<div class="form-group">
+                            <input name="backtext" type="text" class="form-control" value="{{ _post['backtext'] }}" placeholder="text">
+                        </div>
+                        <div class="form-group">
+                            <input type="url" name="backimageurl" class="form-control" value="{{ _post['backimageurl'] }}" placeholder="image url">
+                        </div>-->
+                        <div class="form-label-group">
+                        	<input name="backtext" type="text" id="addCard2_1" class="form-control" placeholder="text" autofocus>
+                            <label for="addCard2_1">text</label>
+                        </div>
+                        <div class="form-label-group">
+                        	<input type="url" name="backimageurl" id="addCard2_2" class="form-control" placeholder="image url" autofocus>
+                            <label for="addCard2_2">image url</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="">
+                    <button type="submit" class="btn btn-primary rounded-0" style="width:calc(100% - 12px);">Add Card</button>
+                </div>
+            </div>
+
+        </form>
+		
+		<br>
+		
+		<legend>CHAPTERS</legend>
+        
+        <div class="table-responsive mt-4">
+            <table class="table table-hover table-sm text-dark">
+                <thead class="thead-light">
+                    <tr>
+                        <th>#id</th>
+                        <th>Name</th>
+                        <th>chapter</th>
+                        <th>Cards</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for chapter in sets.getChaptersFromSet( _get['id'] ) %}
+                    <tr{% if chapter.id == _get['id'] %} class="table-active"{% endif %}>
+                        <td>{{ chapter.id }}</td>
+                        <td>{{ chapter.name }}</td>
+                        <td>{{ chapter.chapter }}</td>
+                        <td>{{ chapter.cards }}</td>
+                        <td style="width: 10%;"><a href="{{ root }}?page=edit_set&amp;id={{ chapter.id }}">View</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+        <br>
+
+        <legend>CARDS</legend>
+
+        <div class="mt-4">
+            <table class="table table-hover table-sm text-dark">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Front</th>
+                        <th scope="col"> </th>
+                        <th scope="col">Back</th>
+                        <th scope="col"> </th>
+                        <th scope="col"> </th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Text</td>
+                        <td>Image</td>
+                        <td>Text</td>
+                        <td>Image</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    {% for card in sets.getCards( _get['id'] ) %}
+                    <tr>
+                        <td style="width: 20%">{{ card.fronttext|length > 20 ? card.fronttext|slice(0, 18) ~ '...' : card.fronttext }}</td>
+                        <td style="width: 20%">{{ card.frontimageurl|length > 20 ? card.frontimageurl|slice(0, 18) ~ '...' : card.frontimageurl }}</td>
+                        <td style="width: 20%">{{ card.backtext|length > 20 ? card.backtext|slice(0, 18) ~ '...' : card.backtext }}</td>
+                        <td style="width: 20%">{{ card.backimageurl|length > 20 ? card.backimageurl|slice(0, 18) ~ '...' : card.backimageurl }}</td>
+                        <td>
+                            <a href="{{ root }}?page=edit_set&amp;subpage=edit&amp;id={{ _get['id'] }}&amp;fronttext={{ card.fronttext }}&amp;frontimageurl={{ card.frontimageurl }}&amp;backtext={{ card.backtext }}&amp;backimageurl={{ card.backimageurl }}">Edit</a>
+                        </td>
+                        <td>
+                            <a class="text-danger" href="{{ root }}?page=edit_set&amp;subpage=delete&amp;id={{ _get['id'] }}&amp;fronttext={{ card.fronttext }}&amp;frontimageurl={{ card.frontimageurl }}&amp;backtext={{ card.backtext }}&amp;backimageurl={{ card.backimageurl }}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+		<br>
+		
+		<legend>EXTRAS</legend>
+		
+		<form class="form-inline" action="{{ root }}?page=my_sets&amp;subpage=set_deleted&amp;id={{ _get['id'] }}&amp;name=this_set.name&amp;chapter=this_set.chapter" method="post">
+		  <select name="extras_action" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" required>
+		    <option disabled="disabled" value="" selected>Choose Action...</option>
+		    <option {% if this_set.cards == 0 %} disabled="disabled" {% endif %} value="delete_allcards">Delete all cards</option>
+		    <option value="delete_set">Delete this set</option>
+		  </select>
+		<input type="hidden" name="id" value="{{ this_set.id }}">
+		  <div class="custom-control custom-checkbox my-1 mr-sm-2">
+		    <input type="checkbox" name="iamaware_check" class="custom-control-input" id="customControlInline" required>
+		    <label class="custom-control-label" for="customControlInline">Yes I am aware of the fact that this action is irreversible.</label>
+		  </div>
+		
+		  <button type="submit" class="btn btn-primary my-1">Submit</button>
+		</form>
+		
+
+    </div>
+
+</div>

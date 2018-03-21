@@ -1,0 +1,137 @@
+<div class="container">
+    {% if _get['404'] is defined %}
+    <div class="alert alert-danger  alert-dismissible fade show no-corners" role="alert">
+        Error 404. Something went wrong.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm mt-5">
+            <img class="img-fluid" style="max-height:660px;max-width:100%" src="./img/mockup8.png" alt="mockup">
+        </div>
+        <div class="col-sm mt-5 pt-4">
+            <h1 class="display-4 playfair font-italic">The fastest way to learn new vocabulary.</h1>
+            <footer class="blockquote-footer text-white">The developers of <cite title="K-Squared">K-Squared</cite></footer>
+            <div class="mt-0">
+                <br>
+                <a class="badge-link" href="#"><img class="img-responsive center-block" style="max-height:100px; max-width:400px;" src="./img/google-play-badge.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="col-sm-1">
+
+        </div>
+        
+    </div>
+    <!--<div class="caption">
+        <br>
+        <span class="border border-0">SCROLL DOWN</span>
+        <br><br><br><br>
+    </div>--><br><br>
+    {% if not user.islogged %}
+    <div class="row">
+    	<div class="col-sm-2">
+
+        </div>
+    	<div class="col-sm mt-8" style="width:100%">
+            <div id="register" class="card sign-up-card border-light text-white" style="width:100%">
+                <div class="card-body py-4">
+                    <form class="needs-validation mb-0" role="form" action="{{ root }}" method="post" novalidate>
+                        <legend class="text-center">Sign Up Now</legend>
+                        
+                            <!--<i class="fas fa-user prefix grey-text"></i>-->
+                        <div class="form-label-group form-label-group-transparent">
+                        	<input type="text" name="username" id="register_username" class="form-control transparent-input" placeholder="Username" required autofocus>
+                            <label for="register_username">Username</label>
+                        </div>
+
+                        <div class="form-label-group form-label-group-transparent">
+                            <input type="email" name="email" id="inputEmail" class="form-control transparent-input" placeholder="Email address" autofocus>
+                            <label for="inputEmail">Email address</label>
+                        </div>
+
+                        <!--<div class="md-form">
+			                <i class="fa fa-envelope prefix grey-text"></i>
+				                <input type="email" name="email" id="register_email" class="form-control input-lg transparent-input">
+				                <label for="register_email" class="font-weight-light">Your email</label>
+				            </div>-->
+                        <!--<div class="md-form mb-3">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <input type="password" name="password" id="register_password" class="form-control input-lg transparent-input" required>
+                            <label for="register_password" class="font-weight-light">Your password</label>
+                        </div>-->
+                        
+                        
+                        <div class="form-label-group form-label-group-transparent">
+                            <input type="password" name="password" id="register_password" class="form-control transparent-input" placeholder="Password" required autofocus>
+                            <label for="register_password">Password</label>
+                        </div>
+                        
+                        <!--<div class="md-form">
+			                <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+				                <input type="password" name="password2" id="register_password2" class="form-control input-lg" required>
+				               <label for="register_password2" class="font-weight-light">Confirm your password</label>
+				            </div>-->
+                        <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LfzRUgUAAAAAASI-e8S8pizF66JmUt3pSFwY1jH"></div>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-light btn-block ">Register Now</button>
+                            <!--<button class="btn btn-cyan" type="submit">Register</button>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+    </div>
+    {% endif %}
+
+    
+    <br>
+</div>
+
+<div class="white-area my-background mt-5 py-5 pt-0 text-dark {% if user.islogged or true %} homeup {% endif %}" id="features">
+    <div class="container">
+        <!--<div class="text-center">
+	            <button class="btn btn-myorange btn-change scroll-features rounded-0 mx-auto my-2 my-sm-0 font-weight-bold border-3 mr-3" type="submit">FEATURES</button>
+	        </div>-->
+        <div class="text-center">
+            <h1>FEATURES</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+
+            </div>
+            <div class="col-sm-6 mt-5">
+                <ul class="list">
+                    <li class="list-item">
+                        The <a href="http://en.wikipedia.org/wiki/Spaced%20repetition%20software">SRS (Spaced Repetition System)</a> is a learning method that gives you your vocabulary right before you <i>would forget it</i>. </li>
+                    <li class="list-item">
+                        Create your onw flash cards in seconds with our browser-based flashcard maker! Research shows that learning vocabulary by making your own flash cards improves your ability to memorize your material way faster!
+                    </li>
+                    <li class="list-item">
+                        Learn anytime anywhere. Your progress is always synced between website and app.
+                    </li>
+                    <li class="list-item">
+                        Open-Source on <i class="fab fa-github"></i> GitHub. This service is provided to you 100% free plus you can read the entire scource code and report issues.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<div class="mt-5" style="height:600px">
+    platzhalter
+
+</div>-->
+
+{% if not user.islogged %} {{ include('login.html') }} {% else %} {{ include('my_sets.html') }} {% endif %}
