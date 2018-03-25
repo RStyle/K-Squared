@@ -19,7 +19,7 @@
             <footer class="blockquote-footer text-white">The developers of <cite title="K-Squared">K-Squared</cite></footer>
             <div class="mt-0">
                 <br>
-                <a class="badge-link" href="#"><img class="img-responsive center-block" style="max-height:100px; max-width:400px;" src="./img/google-play-badge.svg" alt=""></a>
+                <a class="badge-link" href="https://play.google.com/store/apps/details?id=de.savrasov.kaysquared"><img class="img-responsive center-block" style="max-height:100px; max-width:400px;" src="./img/google-play-badge.svg" alt=""></a>
             </div>
         </div>
         <div class="col-sm-1">
@@ -40,46 +40,27 @@
     	<div class="col-sm mt-8" style="width:100%">
             <div id="register" class="card sign-up-card border-light text-white" style="width:100%">
                 <div class="card-body py-4">
+                    <legend class="text-center">Sign Up Now</legend>
                     <form class="needs-validation mb-0" role="form" action="{{ root }}" method="post" novalidate>
-                        <legend class="text-center">Sign Up Now</legend>
-                        
                             <!--<i class="fas fa-user prefix grey-text"></i>-->
                         <div class="form-label-group form-label-group-transparent">
-                        	<input type="text" name="username" id="register_username" class="form-control transparent-input" placeholder="Username" required autofocus>
-                            <label for="register_username">Username</label>
+                        	<input type="text" name="username" id="register_username" class="form-control transparent-input" placeholder="Username*" required>
+                            <label for="register_username">Username*</label>
                         </div>
 
                         <div class="form-label-group form-label-group-transparent">
-                            <input type="email" name="email" id="inputEmail" class="form-control transparent-input" placeholder="Email address" autofocus>
+                            <input type="email" name="email" id="inputEmail" class="form-control transparent-input" placeholder="Email address">
                             <label for="inputEmail">Email address</label>
                         </div>
-
-                        <!--<div class="md-form">
-			                <i class="fa fa-envelope prefix grey-text"></i>
-				                <input type="email" name="email" id="register_email" class="form-control input-lg transparent-input">
-				                <label for="register_email" class="font-weight-light">Your email</label>
-				            </div>-->
-                        <!--<div class="md-form mb-3">
-                            <i class="fa fa-lock prefix grey-text"></i>
-                            <input type="password" name="password" id="register_password" class="form-control input-lg transparent-input" required>
-                            <label for="register_password" class="font-weight-light">Your password</label>
-                        </div>-->
-                        
                         
                         <div class="form-label-group form-label-group-transparent">
-                            <input type="password" name="password" id="register_password" class="form-control transparent-input" placeholder="Password" required autofocus>
-                            <label for="register_password">Password</label>
+                            <input type="password" name="password" id="register_password" class="form-control transparent-input" placeholder="Password*" required>
+                            <label for="register_password">Password*</label>
                         </div>
                         
-                        <!--<div class="md-form">
-			                <i class="fa fa-exclamation-triangle prefix grey-text"></i>
-				                <input type="password" name="password2" id="register_password2" class="form-control input-lg" required>
-				               <label for="register_password2" class="font-weight-light">Confirm your password</label>
-				            </div>-->
                         <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LfzRUgUAAAAAASI-e8S8pizF66JmUt3pSFwY1jH"></div>
                         <div class="text-center mt-3">
                             <button type="submit" class="btn btn-light btn-block ">Register Now</button>
-                            <!--<button class="btn btn-cyan" type="submit">Register</button>-->
                         </div>
                     </form>
                 </div>
@@ -118,7 +99,7 @@
                         Learn anytime anywhere. Your progress is always synced between website and app.
                     </li>
                     <li class="list-item">
-                        Open-Source on <i class="fab fa-github"></i> GitHub. This service is provided to you 100% free plus you can read the entire scource code and report issues.
+                        Open-Source on <a href="https://github.com/RStyle/K-Squared"><i class="fab fa-github"></i> GitHub</a>. This service is provided to you 100% free plus you can read the entire scource code and report issues.
                     </li>
                 </ul>
             </div>

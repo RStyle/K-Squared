@@ -1,5 +1,5 @@
 	<div class="container white-area my-background height-auto text-dark mt-0 pb-4">
-		<!--<div class="jumbotron text-dark rounded-0 mt-5 py-2 bg-light my-background" id="login-form">-->
+		<!-- <div class="jumbotron text-dark rounded-0 mt-5 py-2 bg-light my-background" id="login-form"> -->
 		<div class="" id="login-form">
 			<br>
 		    <div class="container">
@@ -37,18 +37,12 @@
 		                    <fieldset>
 		                        <h2>LOGIN</h2>
 		                        <hr class="colorgraph">
-		                        <!--<div class="form-group">
-		                            <input type="text" name="username" id="login_username" class="form-control input-lg" placeholder="Username" value="{{ _get['user'] }}" required>
-		                        </div>
-		                        <div class="form-group">
-		                            <input type="password" name="password" id="login_password" class="form-control input-lg" placeholder="Password" required>
-		                        </div>-->
 		                        <div class="form-label-group">
-		                        	<input type="text" name="username" id="login_username" class="form-control" value="{{ _get['user'] }}" placeholder="Username" autofocus>
+		                        	<input type="text" name="username" id="login_username" class="form-control" value="{{ _get['user'] }}" placeholder="Username">
 		                            <label for="login_username">Username</label>
 		                        </div>
 		                        <div class="form-label-group">
-		                        	<input type="password" name="password" id="login_password" class="form-control" placeholder="Password" autofocus>
+		                        	<input type="password" name="password" id="login_password" class="form-control" placeholder="Password">
 		                            <label for="login_password">Password</label>
 		                        </div>
 		                        <div class="container" style="height:38px">
@@ -60,10 +54,11 @@
 		                                    </div>
 		                                </div>
 		                                <div class="col-sm">
-		                                    <a href="" class="btn btn-link p-0 m-0 mt-1">Forgot Password?</a>
+		                                    <a id="forgot_password" href="" class="btn btn-link p-0 m-0 mt-1">Forgot Password?</a>
+		                                	<div class="mobile_fix_forget_password2"><br>a</div>
 		                                </div>
-		                                <div class="col-sm">
-		                                	<br>
+		                                <div class="col-sm mobile_fix_forget_password">
+		                                	b<br>
 		                                </div>
 		                            </div>
 		                        </div>
@@ -79,36 +74,7 @@
 		                </form>
 		            </div>
 		        	<div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-2 col-md-offset-3"></div>
-		            <!--
-		            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		                <form class="needs-validation" role="form" action="{{ root }}" method="post" novalidate>
-		                    <fieldset>
-		                        <h2>SIGN UP NOW</h2>
-		                        <hr class="colorgraph">
-		                        <div class="form-group">
-		                            <input type="text" name="username" id="register_username" class="form-control input-lg" placeholder="Username" required>
-		                        </div>
-		                        <div class="form-group">
-		                            <input type="email" name="email" id="register_email" class="form-control input-lg" placeholder="Email Address (Optional)">
-		                        </div>
-		                        <div class="form-group">
-		                            <input type="password" name="password" id="register_password" class="form-control input-lg" placeholder="Password" required>
-		                        </div>
-		                        <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LfzRUgUAAAAAASI-e8S8pizF66JmUt3pSFwY1jH"></div>
-		
-		                        <hr class="colorgraph">
-		                        <div class="row">
-		                            <div class="col-xs-12 col-sm-12 col-md-12">
-		                                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Register">
-		                            </div>
-		                        </div>
-		                    </fieldset>
-		                </form>
-		            </div>-->
 		        </div>
-		        
-		        
-		        
 		    </div>
 		</div>
 	</div>

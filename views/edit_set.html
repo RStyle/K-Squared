@@ -144,36 +144,11 @@
 
         <form action="{{ root }}?page=edit_set&amp;subpage=add&amp;id={{ _get['id'] }}" method="post">
 
-            <!--<div class="form-group row">
-			  	<label for="fronttext" class="col-sm-1 col-form-label">front</label>
-			    <div class="col">
-			      <input id="fronttext" name="fronttext" type="text" class="form-control" value="{{ _post['fronttext'] }}" placeholder="text">
-			    </div>
-			    <div class="col">
-			      <input type="url" name="frontimageurl" class="form-control" value="{{ _post['frontimageurl'] }}" placeholder="image url">
-			    </div>
-			  </div>
-			  <hr>
-			  <div class="form-group row">
-				<label for="backtext" class="col-sm-1 col-form-label">back</label>
-			    <div class="col">
-			      <input id="backtext" name="backtext" type="text" class="form-control" value="{{ _post['backtext'] }}" placeholder="text">
-			    </div>
-			    <div class="col">
-			      <input type="url" name="backimageurl" class="form-control" value="{{ _post['backimageurl'] }}" placeholder="image url">
-			    </div>
-			  </div>-->
 
             <div class="card-group">
                 <div class="card rounded-0">
                     <div class="card-body">
                         <h5 class="card-title">front</h5>
-                        <!--<div class="form-group">
-                            <input name="fronttext" type="text" class="form-control" value="{{ _post['fronttext'] }}" placeholder="text">
-                        </div>
-                        <div class="form-group">
-                            <input type="url" name="frontimageurl" class="form-control" value="{{ _post['frontimageurl'] }}" placeholder="image url">
-                        </div>-->
                         <div class="form-label-group">
                         	<input name="fronttext" type="text" id="addCard1_1" class="form-control" value="{{ _post['fronttext'] }}" placeholder="text" autofocus>
                             <label for="addCard1_1">text</label>
@@ -187,12 +162,6 @@
                 <div class="card rounded-0">
                     <div class="card-body">
                         <h5 class="card-title">back</h5>
-                        <!--<div class="form-group">
-                            <input name="backtext" type="text" class="form-control" value="{{ _post['backtext'] }}" placeholder="text">
-                        </div>
-                        <div class="form-group">
-                            <input type="url" name="backimageurl" class="form-control" value="{{ _post['backimageurl'] }}" placeholder="image url">
-                        </div>-->
                         <div class="form-label-group">
                         	<input name="backtext" type="text" id="addCard2_1" class="form-control" placeholder="text" autofocus>
                             <label for="addCard2_1">text</label>
