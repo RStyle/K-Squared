@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorListItemBackground">
+
+    <TextView
+        android:id="@+id/frontText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dip"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorListItemBackground"
+        android:gravity="left"
+        android:text="frontText"
+        android:textColor="@color/colorListItemText"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/backText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dip"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorListItemBackground"
+        android:gravity="left"
+        android:text="backText"
+        android:textColor="@color/colorListItemText"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/frontImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dip"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorListItemBackground"
+        android:gravity="left"
+        android:text="frontImage"
+        android:textColor="@color/colorListItemText"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frontText" />
+
+    <TextView
+        android:id="@+id/backImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dip"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorListItemBackground"
+        android:gravity="left"
+        android:text="backImage"
+        android:textColor="@color/colorListItemText"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backText" />
+</android.support.constraint.ConstraintLayout>
